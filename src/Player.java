@@ -22,11 +22,11 @@ public class Player {
     }
 
     public void takeDamage() {
-        health = health - damage;  
+        health -= damage;  
     }
 
     public void addScore(){
-        score = score + points;
+        score += points;
     }
 
     public boolean isAlive(){
