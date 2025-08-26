@@ -1,6 +1,6 @@
 public abstract class Enemy {
-    private String enemyType;
-    private int health;
+    protected String enemyType;
+    protected int health;
     
     public Enemy(String enemyType, int health){
         this.enemyType = enemyType;
