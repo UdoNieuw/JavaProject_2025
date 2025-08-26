@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 //MAIN game class
 public class Game {
     public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class Game {
 
         //Create player
         Player player = new Player(playerName);
+        System.out.println("Welcome Adventure, " + player.getName() + " !");
 
         scanner.close();
     }

@@ -5,8 +5,8 @@ public class Player {
 
     public Player(String name){
         this.playerName = playerName;
-        this.health = 20;
-        this.score = 0;
+        this.health = 20; //Starting life
+        this.score = 0; //Starting score
     }
 
     public String getName() {
