@@ -1,6 +1,6 @@
 public class SlimeEnemy extends Enemy{
     public SlimeEnemy() {
-        super("Slime", 20);
+        super("Slime", 9);
     }
 
     //Slime weakeness

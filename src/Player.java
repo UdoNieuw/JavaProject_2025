@@ -21,13 +21,13 @@ public class Player {
         return score;
     }
 
-    public void takeDamage() {
+/*     public void takeDamage() {
         health -= damage;  
     }
 
     public void addScore(){
         score += points;
-    }
+    } */
 
     public boolean isAlive(){
         return health > 0;

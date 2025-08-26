@@ -1,6 +1,6 @@
 public class GoblinEnemy extends Enemy{
     public GoblinEnemy(){
-        super("Goblin", 10);
+        super("Goblin", 12);
     }
 
     //Goblin weakeness

@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -15,6 +16,18 @@ public class Game {
         //Create player
         Player player = new Player(playerName);
         System.out.println("Welcome Adventure, " + player.getName() + " !");
+
+        //Encounter from a Random enemy
+        Random random = new Random();
+        Enemy enemy;
+        if (random.nextBoolean()) {
+            enemy = new SlimeEnemy();
+        } else {
+            enemy = new GoblinEnemy();
+        }
+        
+        //Enemy appearsUdo
+        System.out.println("A wild encounter with a " + enemy.getEnemyType() + " appeared with HP: " + enemy.getHeatlh());
 
         scanner.close();
     }
