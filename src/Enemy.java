@@ -7,5 +7,18 @@ public abstract class Enemy {
         this.health = health;
     }
 
-    public
+    public String getEnemyType(){
+        return enemyType;
+    }
+
+    public int getHeatlh(){
+        return health;
+    }
+
+    public void takeDamage(){
+        health -= health;
+    }
+
+    //Weakness
+    public abstract boolean Weakness(); 
 }
