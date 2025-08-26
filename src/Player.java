@@ -4,7 +4,7 @@ public class Player {
     private int score;
 
     public Player(String name){
-        this.playerName = playerName;
+        this.playerName = name;
         this.health = 20; //Starting life
         this.score = 0; //Starting score
     }
@@ -21,13 +21,13 @@ public class Player {
         return score;
     }
 
-/*     public void takeDamage() {
+    public void takeDamage() {
         health -= damage;  
     }
 
     public void addScore(){
         score += points;
-    } */
+    }
 
     public boolean isAlive(){
         return health > 0;

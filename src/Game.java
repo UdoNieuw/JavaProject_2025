@@ -26,7 +26,7 @@ public class Game {
             enemy = new GoblinEnemy();
         }
         
-        //Enemy appearsUdo
+        //Enemy appears
         System.out.println("A wild encounter with a " + enemy.getEnemyType() + " appeared with HP: " + enemy.getHeatlh());
 
         scanner.close();
