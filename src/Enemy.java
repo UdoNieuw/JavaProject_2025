@@ -1,4 +1,4 @@
-public abstract class Enemy {
+public abstract class Enemy { //Method that will be override by Enemy types classes
     protected String enemyType;
     protected int health;
     
