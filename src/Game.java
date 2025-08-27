@@ -15,7 +15,7 @@ public class Game {
 
         //Create player
         Player player = new Player(playerName);
-        System.out.println("Welcome Adventure, " + player.getName() + " !");
+        System.out.println("Welcome Adventure, " + player.getName() + "!");
 
         //Encounter from a Random enemy
         Random random = new Random();
@@ -26,8 +26,59 @@ public class Game {
             enemy = new GoblinEnemy();
         }
         
+        //Combat loop
+        while (player.isAlive() && enemy.isAlive()) {
+            //Show attack options
+            System.out.println("Choose your attack:");
+            System.out.println("1.Basic Strike (always works)");
+            System.out.println("2.Prime Strike (works if enemy HP is prime)");
+            System.out.println("3.Modulus Strike (works if enemy HP divisible by 3)");
+            System.out.println("Attack: ");
+
+            int option = scanner.nextInt();
+
+            boolean effective = false;
+            
+            //Check attack to see if effective
+            if (option == 6) { //kill command - development
+                enemy.kill();
+            } else if (option == Attack.BASIC) {
+                effective = true;
+            } else if (option == Attack.PRIME) {
+                /* effective = isPrime(enemy.getHeatlh()); */ //fix
+            } else if (option == Attack.MODULUS) {
+                effective = (enemy.getHeatlh() % 3 == 0); //fix
+            }
+
+            //Deal damage
+            if (effective) {
+                enemy.takeDamage(3); //Damage dealt
+                player.addScore(10); //Add score
+                System.out.println("Attack was effective! " + enemy.getType() + " with HP: " + enemy.getHeatlh());
+
+            } else { 
+                System.out.println("Attack was ineffective!");
+            }
+
+            //Check enemy health - End success
+            if (!enemy.isAlive()) {
+                System.out.println("You win!");
+                System.out.println("You succesfully defeated " + enemy.getType());
+                System.out.println("Final score: " + player.getScore());
+            }
+
+            //Enemy counter attack
+            int enemyDamage = random.nextInt(6 - 3 + 1) + 3;
+            System.out.println(enemy.getType() + " deals: " + enemyDamage + " damage!");
+
+            //Check player health - End failure
+            if (!player.isAlive()) {
+                
+            }
+        }
+
         //Enemy appears
-        System.out.println("A wild encounter with a " + enemy.getEnemyType() + " appeared with HP: " + enemy.getHeatlh());
+        System.out.println("A wild encounter with a " + enemy.getType() + " appeared with HP: " + enemy.getHeatlh());
 
         scanner.close();
     }

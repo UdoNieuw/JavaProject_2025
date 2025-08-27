@@ -25,7 +25,7 @@ public class Player {
         health -= damage;  
     }
 
-    public void addScore(){
+    public void addScore(int points){
         score += points;
     }
 

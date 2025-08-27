@@ -7,7 +7,7 @@ public abstract class Enemy { //Method that will be override by Enemy types clas
         this.health = health;
     }
 
-    public String getEnemyType(){
+    public String getType(){
         return enemyType;
     }
 
@@ -15,10 +15,16 @@ public abstract class Enemy { //Method that will be override by Enemy types clas
         return health;
     }
 
-    public void takeDamage(){
-        health -= health;
+    public void takeDamage(int damage){
+        health -= damage;
     }
 
+    public void kill(){ //kill command - development
+        health = 0;
+    }
+    public boolean isAlive(){
+        return health > 0;
+    }
     //Weakness
     public abstract boolean Weakness(); 
 }
