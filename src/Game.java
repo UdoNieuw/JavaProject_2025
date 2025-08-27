@@ -85,7 +85,7 @@ public class Game {
         }
 
         //Enemy appears
-        System.out.println("A wild encounter with a " + enemy.getType() + " appeared with HP: " + enemy.getHeatlh());
+        System.out.println("A wild encounter with a " + enemy.getType() + " appeared with HP: " + enemy.getHeatlh()); //Wrong place - move up
 
         scanner.close();
     }
