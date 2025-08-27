@@ -21,7 +21,7 @@ public class Player {
         return score;
     }
 
-    public void takeDamage() {
+    public void takeDamage(int damage) {
         health -= damage;  
     }
 

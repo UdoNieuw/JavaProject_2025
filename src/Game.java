@@ -41,7 +41,10 @@ public class Game {
             
             //Check attack to see if effective
             if (option == 6) { //kill command - development
+                effective = true;
                 enemy.kill();
+            } else if (effective) { //attack miss - development
+                
             } else if (option == Attack.BASIC) {
                 effective = true;
             } else if (option == Attack.PRIME) {
@@ -54,7 +57,7 @@ public class Game {
             if (effective) {
                 enemy.takeDamage(3); //Damage dealt
                 player.addScore(10); //Add score
-                System.out.println("Attack was effective! " + enemy.getType() + " with HP: " + enemy.getHeatlh());
+                System.out.println("Attack was effective! " + enemy.getType() + " has " + enemy.getHeatlh() + " HP left");
 
             } else { 
                 System.out.println("Attack was ineffective!");
@@ -64,16 +67,20 @@ public class Game {
             if (!enemy.isAlive()) {
                 System.out.println("You win!");
                 System.out.println("You succesfully defeated " + enemy.getType());
-                System.out.println("Final score: " + player.getScore());
+                System.out.println("Final score: " + (player.getScore()));
+                break;
             }
 
             //Enemy counter attack
             int enemyDamage = random.nextInt(6 - 3 + 1) + 3;
+            player.takeDamage(enemyDamage);
             System.out.println(enemy.getType() + " deals: " + enemyDamage + " damage!");
+            System.out.println(player.getName() + " has " + player.getHealth() + " HP left");
 
             //Check player health - End failure
             if (!player.isAlive()) {
-                
+                System.out.println("You died!");
+                System.out.println("Final score: " + (player.getScore()));
             }
         }
 
