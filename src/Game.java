@@ -1,17 +1,24 @@
 import java.util.Random;
 import java.util.Scanner;
 
-
 //MAIN game class
 public class Game {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        //Intro
+        System.out.println("Welcome to Math quest: The Enchanted Numbers");
 
         //Get player's name
         System.out.println("Enter your legend's name: ");
         String playerName = scanner.nextLine();
 
         //Validate input
+        if (!playerName.matches("[a-zA-Z]+")){
+            System.out.println("Invalid input");
+            scanner.close();
+            return; //stop game if invalid
+        }
 
         //Create player
         Player player = new Player(playerName);
@@ -89,6 +96,7 @@ public class Game {
             if (!player.isAlive()) {
                 System.out.println("!You died!");
                 System.out.println("Final score: " + (player.getScore()));
+                StoreScore.saveScore(player.getName(),player.getScore());
             }
         }
 
