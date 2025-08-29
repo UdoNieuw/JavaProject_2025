@@ -57,14 +57,24 @@ public class Game {
             if (option == 6) { //kill command - development
                 effective = true;
                 enemy.kill();
-            } else if (effective) { //attack miss - development
-                
+            } else if (option == 4) { 
+                effective = false;  //attack miss - development
             } else if (option == Attack.BASIC) {
                 effective = true;
-            } else if (option == Attack.PRIME) {
-                effective = isPrime(enemy.getHeatlh()); //fix
-            } else if (option == Attack.MODULUS) {
-                effective = (enemy.getHeatlh() % 3 == 0); //fix
+            } else if (enemy.getType().equals("Slime")){ //Check if Slime
+                if(option == Attack.MODULUS && enemy.Weakness() == true){ //Check if attack is correct and weakness is true
+                    effective = true;
+                }
+                else{
+                    effective = false;
+                }
+            } else if (enemy.getType().equals("Goblin")){ //Check if Goblin
+                if(option == Attack.PRIME && enemy.Weakness() == true){ //Check if attack is correct and weakness is true
+                    effective = true;
+                }
+                else{
+                    effective = false;
+                }
             }
 
             //Deal damage
@@ -101,17 +111,5 @@ public class Game {
         }
 
         scanner.close();
-    }
-
-    public static boolean isPrime(int h){
-        if (h <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(h); i++){
-            if (h % i == 0) {
-                return false;
-            }
-        }
-        return true;
     }
 }
