@@ -1,3 +1,6 @@
+IMPORTANT:
+Project was done in Visual Studio Code with a Java Extention since NetBean couldn't run on my desktop ~UN
+
 📖 Story
 You are a brave adventurer wandering into the land of enchanted numbers.
 Every enemy you meet has a hidden mathematical weakness. Use the right strike at the right time, defeat your enemies, and climb the score ladder!
