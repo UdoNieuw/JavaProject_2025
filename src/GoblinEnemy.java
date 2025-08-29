@@ -1,3 +1,6 @@
+//Udo Nieuwmeijer - PT.2022.F0G0G7
+//Java Project 2025 - Math RPG game
+//2025/08/29
 public class GoblinEnemy extends Enemy{
     public GoblinEnemy(){
         super("Goblin", 12);
