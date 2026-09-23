@@ -36,4 +36,4 @@ src/
 └── StoreScore.java   # Handles saving score to file
 
 👨‍💻 Author
-Created by Udo Nieumweijer as a learning project in Java.
+Created by Udo Nieumweijer as a project in Java.
